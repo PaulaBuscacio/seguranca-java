@@ -1,4 +1,4 @@
-create table consultas(
+create table if not exists consultas(
 
     id serial primary key,
     medico_id bigint not null,
