@@ -1,0 +1,6 @@
+ALTER TABLE usuarios DROP COLUMN IF EXISTS perfil;
+CREATE TYPE perfil_enum AS ENUM ('ATENDENTE', 'MEDICO', 'PACIENTE');
+ALTER TABLE usuarios ADD COLUMN perfil perfil_enum;
+
+UPDATE usuarios SET perfil = 'ATENDENTE';
+ALTER TABLE usuarios ALTER COLUMN perfil SET NOT NULL;

@@ -1,0 +1,4 @@
+ALTER TABLE usuarios ADD COLUMN perfil VARCHAR(20);
+
+UPDATE usuarios SET perfil = 'ATENDENTE';
+ALTER TABLE usuarios ALTER COLUMN perfil SET NOT NULL;
