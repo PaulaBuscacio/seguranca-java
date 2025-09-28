@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt"
       xmlns:th="http://thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{template.html}">
 <head>
     <title>Listagem de Médicos</title>
@@ -13,7 +14,7 @@
             <section class="card">
                 <h2 class="title">Listagem de médicos</h2>
 
-                <div class="table-controls">
+                <div class="table-controls" sec:authorize="hasRole('ATENDENTE')" >
                     <a href="formulario-medico.html" th:href="@{/medicos/formulario}" class="btn btn-tertiary">
                         <img src="/static/assets/plus.png" th:src="@{/assets/plus.png}" alt="Ícone de adicionar" class="btn-icon">
                         Novo Médico
